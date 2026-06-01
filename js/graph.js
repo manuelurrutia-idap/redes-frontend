@@ -682,23 +682,5 @@ function detectCycle(fromId, toId) {
 
 
 
-function exportGraph() {
-    const canvas = document.querySelector('#network-graph canvas');
-    if (!canvas) return;
-    
-    const tempCanvas = document.createElement('canvas');
-    tempCanvas.width = canvas.width;
-    tempCanvas.height = canvas.height;
-    const ctx = tempCanvas.getContext('2d');
-    
-    const colors = getThemeColors();
-    ctx.fillStyle = colors.exportBg;
-    ctx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
-    
-    ctx.drawImage(canvas, 0, 0);
-    
-    const link = document.createElement('a');
-    link.download = 'grafo_proyecto.png';
-    link.href = tempCanvas.toDataURL('image/png');
-    link.click();
+
 }
