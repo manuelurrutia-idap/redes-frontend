@@ -185,6 +185,16 @@ async function refreshProjectData() {
 
 // Activities
 function renderActivities() {
+    // Agrega esto justo antes de usar currentActivities.map:
+if (!Array.isArray(currentActivities)) {
+    console.error("No se recibió una lista válida de actividades", currentActivities);
+    currentActivities = []; // Forzamos una lista vacía para que no se rompa la app
+}
+
+// Y luego ya sigue tu código normal:
+const tbody = document.getElementById('activities-table-body');
+tbody.innerHTML = currentActivities.map(act => `
+   ...
     const body = document.getElementById('activities-table-body');
     body.innerHTML = `
         <tbody>
