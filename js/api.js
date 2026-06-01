@@ -1,4 +1,4 @@
-const API_URL = 'https://redes-backend-pnsu.onrender.com';
+const API_URL = 'https://redes-backend-4w8d.onrender.com';
 
 const api = {
     // Projects
