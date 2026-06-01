@@ -49,9 +49,9 @@ const api = {
     },
     runMST: (projectId, algo) => fetch(`${API_URL}/projects/${projectId}/algorithms/mst?algo=${algo}`).then(res => res.json()),
     runMaxFlow: (projectId, source, target) => fetch(`${API_URL}/projects/${projectId}/algorithms/max-flow?source=${source}&target=${target}`).then(res => res.json()),
-    runCPM: (projectId) => fetch(`${API_URL}/projects${projectId}/algorithms/cpm`).then(res => {
+    runCPM: (projectId) => fetch(`${API_URL}/projects/${projectId}/algorithms/cpm`).then(res => {
         if(!res.ok) throw new Error("Posible ciclo detectado, no se puede calcular CPM");
         return res.json();
     }),
-    runPERT: (projectId) => fetch(`${API_URL}/projects${projectId}/algorithms/pert`).then(res => res.json())
+    runPERT: (projectId) => fetch(`${API_URL}/projects/${projectId}/algorithms/pert`).then(res => res.json())
 };
