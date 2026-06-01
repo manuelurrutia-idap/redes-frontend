@@ -8,11 +8,11 @@ const api = {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     }).then(res => res.json()),
-    deleteProject: (id) => fetch(`${API_URL}/project${id}`, { method: 'DELETE' }).then(res => res.json()),
+    deleteProject: (id) => fetch(`${API_URL}/project/${id}`, { method: 'DELETE' }).then(res => res.json()),
 
     // Activities
-    getActivities: (projectId) => fetch(`${API_URL}/projects${projectId}/activities`).then(res => res.json()),
-    createActivity: (projectId, data) => fetch(`${API_URL}/projects${projectId}/activities`, {
+    getActivities: (projectId) => fetch(`${API_URL}/projects/${projectId}/activities`).then(res => res.json()),
+    createActivity: (projectId, data) => fetch(`${API_URL}/projects/${projectId}/activities`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
