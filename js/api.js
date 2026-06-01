@@ -40,14 +40,14 @@ const api = {
 
     // Algorithms
     runShortestPath: (projectId, algo, source, target) => {
-        let url = `${API_URL}/projects${projectId}/algorithms/shortest-path?algo=${algo}&source=${source}`;
+        let url = `${API_URL}/projects/${projectId}/algorithms/shortest-path?algo=${algo}&source=${source}`;
         if(target) url += `&target=${target}`;
         return fetch(url).then(res => {
             if(!res.ok) throw new Error("Error en algoritmo");
             return res.json();
         });
     },
-    runMST: (projectId, algo) => fetch(`${API_URL}/projects${projectId}/algorithms/mst?algo=${algo}`).then(res => res.json()),
+    runMST: (projectId, algo) => fetch(`${API_URL}/projects/${projectId}/algorithms/mst?algo=${algo}`).then(res => res.json()),
     runMaxFlow: (projectId, source, target) => fetch(`${API_URL}/projects/${projectId}/algorithms/max-flow?source=${source}&target=${target}`).then(res => res.json()),
     runCPM: (projectId) => fetch(`${API_URL}/projects${projectId}/algorithms/cpm`).then(res => {
         if(!res.ok) throw new Error("Posible ciclo detectado, no se puede calcular CPM");
