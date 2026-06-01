@@ -543,7 +543,7 @@ async function importExcel(event) {
             }
 
             showToast('¡Importación completada con éxito!', 'success');
-            await loadProjectData();
+            await refreshProjectData();
             
         } catch (error) {
             console.error(error);
